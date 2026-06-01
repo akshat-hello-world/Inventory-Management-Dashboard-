@@ -33,10 +33,14 @@ class Settings(BaseSettings):
     # Database
     # --------------------------------------------------
 
-    POSTGRES_USER: str = Field(..., description="Database username")
-    POSTGRES_PASSWORD: str = Field(..., description="Database password")
-    POSTGRES_DB: str = Field(..., description="Database name")
-    POSTGRES_HOST: str = Field(..., description="Database host")
+    DATABASE_URL_OVERRIDE: str | None = Field(
+        default=None,
+        validation_alias="DATABASE_URL",
+    )
+    POSTGRES_USER: str = Field(default="inventory_user", description="Database username")
+    POSTGRES_PASSWORD: str = Field(default="inventory_password", description="Database password")
+    POSTGRES_DB: str = Field(default="inventory_db", description="Database name")
+    POSTGRES_HOST: str = Field(default="localhost", description="Database host")
     POSTGRES_PORT: int = Field(default=5432)
 
     # --------------------------------------------------
@@ -44,6 +48,7 @@ class Settings(BaseSettings):
     # --------------------------------------------------
 
     FRONTEND_URL: str = "http://localhost:5173"
+    CORS_ORIGINS: str = ""
 
     # --------------------------------------------------
     # Security
@@ -59,6 +64,13 @@ class Settings(BaseSettings):
 
     @property
     def DATABASE_URL(self) -> str:
+        if self.DATABASE_URL_OVERRIDE:
+            return self.DATABASE_URL_OVERRIDE.replace(
+                "postgres://",
+                "postgresql://",
+                1,
+            )
+
         return (
             f"postgresql+psycopg2://"
             f"{self.POSTGRES_USER}:"
@@ -67,6 +79,23 @@ class Settings(BaseSettings):
             f"{self.POSTGRES_PORT}/"
             f"{self.POSTGRES_DB}"
         )
+
+    @property
+    def ALLOWED_ORIGINS(self) -> list[str]:
+        origins = [
+            self.FRONTEND_URL,
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+        ]
+
+        if self.CORS_ORIGINS:
+            origins.extend(
+                origin.strip()
+                for origin in self.CORS_ORIGINS.split(",")
+                if origin.strip()
+            )
+
+        return list(dict.fromkeys(origins))
 
 
 @lru_cache
