@@ -36,6 +36,7 @@ LOW_STOCK_THRESHOLD=10
 SEED_DATABASE=true
 FRONTEND_URL=http://localhost:5173
 CORS_ORIGINS=http://localhost:5173
+CORS_ORIGIN_REGEX=https://.*\.vercel\.app
 ```
 
 After the first successful deploy, you can set:
@@ -92,6 +93,7 @@ Go back to Hugging Face Space settings and update:
 ```env
 FRONTEND_URL=https://<your-vercel-project>.vercel.app
 CORS_ORIGINS=https://<your-vercel-project>.vercel.app
+CORS_ORIGIN_REGEX=https://.*\.vercel\.app
 ```
 
 Restart the Space after changing variables.

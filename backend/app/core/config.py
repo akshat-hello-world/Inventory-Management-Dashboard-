@@ -49,6 +49,7 @@ class Settings(BaseSettings):
 
     FRONTEND_URL: str = "http://localhost:5173"
     CORS_ORIGINS: str = ""
+    CORS_ORIGIN_REGEX: str | None = None
 
     # --------------------------------------------------
     # Security
