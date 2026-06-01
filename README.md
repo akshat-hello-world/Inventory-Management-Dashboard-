@@ -1,3 +1,11 @@
+---
+title: Inventory Management API
+colorFrom: green
+colorTo: gray
+sdk: docker
+app_port: 7860
+---
+
 # Inventory Order Management System
 
 A modern full-stack Inventory & Order Management application built with **React**, **FastAPI**, **PostgreSQL**, **Docker**, and **Alembic**.
@@ -370,6 +378,12 @@ Deployment instructions:
 docs/deployment-guide.md
 ```
 
+Free deployment without Render card requirements:
+
+```text
+docs/free-deployment-guide.md
+```
+
 Deployment stack:
 
 ```text
@@ -378,6 +392,14 @@ Frontend → Vercel
 Backend → Render
 
 Database → Render PostgreSQL
+```
+
+Free stack:
+
+```text
+Frontend -> Vercel
+Backend -> Hugging Face Spaces Docker
+Database -> Supabase Postgres
 ```
 
 ---
