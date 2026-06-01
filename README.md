@@ -384,6 +384,12 @@ Free deployment without Render card requirements:
 docs/free-deployment-guide.md
 ```
 
+Fly.io backend deployment:
+
+```text
+docs/fly-deployment-guide.md
+```
+
 Deployment stack:
 
 ```text
