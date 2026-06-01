@@ -20,7 +20,7 @@ def load_env_file(path: Path) -> dict[str, str]:
         if not line or line.startswith("#") or "=" not in line:
             continue
 
-        key, value = line.split("=", 1)
+        key, value = line.lstrip("\ufeff").split("=", 1)
         values[key.strip()] = value.strip().strip('"').strip("'")
 
     return values
