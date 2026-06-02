@@ -1,4 +1,3 @@
-
 # Inventory Order Management System
 
 A modern full-stack Inventory & Order Management application built with **React**, **FastAPI**, **PostgreSQL**, **Docker**, and **Alembic**.
@@ -18,11 +17,7 @@ https://inventory-management-dashboard-nine.vercel.app
 ### Backend API
 
 ```text
-Backend URL:
-
 https://tokyo-boy-inventory-backend.hf.space
-
-
 ```
 
 ### API Documentation
@@ -31,8 +26,11 @@ https://tokyo-boy-inventory-backend.hf.space
 https://tokyo-boy-inventory-backend.hf.space/docs
 ```
 
+### Docker
 
-
+```text
+https://hub.docker.com/r/akshatkk/inventory-backend
+```
 ---
 
 # Features
@@ -76,7 +74,7 @@ https://tokyo-boy-inventory-backend.hf.space/docs
 ## Backend Features
 
 * RESTful API
-* PostgreSQL Database
+* Supabase PostgreSQL Database
 * Alembic Migrations
 * Pydantic Validation
 * Service Layer Architecture
@@ -88,7 +86,7 @@ https://tokyo-boy-inventory-backend.hf.space/docs
 * Dockerized Frontend
 * Docker Compose Support
 * GitHub Actions CI
-* Render Deployment
+* Hugging Face Spaces Deployment
 * Vercel Deployment
 
 ---
@@ -120,8 +118,9 @@ https://tokyo-boy-inventory-backend.hf.space/docs
 * Docker
 * Docker Compose
 * GitHub Actions
-* Render
+* Hugging Face Spaces
 * Vercel
+* Supabase PostgreSQL
 
 ---
 
@@ -142,31 +141,15 @@ inventory-order-management/
 
 # Architecture
 
-![Architecture](docs/architecture.png)
-
 ```text
-React Frontend
-       │
-       ▼
-FastAPI REST API
-       │
-       ▼
-PostgreSQL Database
+React Frontend (Vercel)
+           │
+           ▼
+FastAPI Backend (Hugging Face Spaces Docker)
+           │
+           ▼
+Supabase PostgreSQL
 ```
-
-The backend follows a layered architecture consisting of:
-
-```text
-API Layer
-    │
-Service Layer
-    │
-Database Layer
-    │
-PostgreSQL
-```
-
-This structure improves maintainability, scalability, and testability.
 
 ---
 
@@ -176,39 +159,21 @@ This structure improves maintainability, scalability, and testability.
 
 ![Dashboard](screenshots/Dashboard.png)
 
-The dashboard provides inventory metrics, business statistics, low-stock alerts, and recent order activity.
-
----
-
 ## Products Management
 
 ![Products](screenshots/product.png)
-
-Manage products, pricing, stock levels, and SKU information through a searchable product catalog.
-
----
 
 ## Customers Management
 
 ![Customers](screenshots/customer.png)
 
-Manage customer information including names, email addresses, and contact details.
-
----
-
 ## Orders Management
 
 ![Orders](screenshots/order.png)
 
-Create and manage customer orders with automatic inventory updates and order tracking.
-
----
-
 ## Mobile Responsive View
 
 ![Mobile View](screenshots/mobile-view.jpeg)
-
-Fully responsive user interface optimized for mobile and tablet devices.
 
 ---
 
@@ -308,8 +273,6 @@ http://localhost:5173
 
 # Docker Setup
 
-Run the complete application:
-
 ```bash
 docker compose up --build
 ```
@@ -347,41 +310,7 @@ VITE_API_BASE_URL=
 
 ---
 
-# API Documentation
-
-Detailed endpoint documentation:
-
-```text
-docs/api-endpoints.md
-```
-
-Swagger UI:
-
-```text
-/api/docs
-```
-
----
-
 # Deployment
-
-Deployment instructions:
-
-```text
-docs/deployment-guide.md
-```
-
-Free deployment without Render card requirements:
-
-```text
-docs/free-deployment-guide.md
-```
-
-Fly.io backend deployment:
-
-```text
-docs/fly-deployment-guide.md
-```
 
 Deployment stack:
 
@@ -389,6 +318,22 @@ Deployment stack:
 Frontend -> Vercel
 Backend -> Hugging Face Spaces Docker
 Database -> Supabase Postgres
+```
+
+Live URLs:
+
+```text
+Frontend:
+https://inventory-management-dashboard-nine.vercel.app
+
+Backend:
+https://tokyo-boy-inventory-backend.hf.space
+
+API Docs:
+https://tokyo-boy-inventory-backend.hf.space/docs
+
+Docker:
+https://hub.docker.com/r/akshatkk/inventory-backend
 ```
 
 ---
@@ -410,8 +355,6 @@ Workflow:
 
 ---
 
-
-
 # Future Enhancements
 
 * Authentication & Authorization
@@ -423,6 +366,3 @@ Workflow:
 * Audit Logging
 * Unit Tests
 * Integration Tests
-
-
-
