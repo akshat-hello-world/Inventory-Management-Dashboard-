@@ -12,26 +12,26 @@ The system enables businesses to efficiently manage products, customers, orders,
 ### Frontend
 
 ```text
-https://inventory-order-management-7z6azcvtui.vercel.app
+https://inventory-management-dashboard-nine.vercel.app
 ```
 
 ### Backend API
 
 ```text
-https://inventory-backend-uotd.onrender.com
+Backend URL:
+
+https://tokyo-boy-inventory-backend.hf.space
+
+
 ```
 
 ### API Documentation
 
 ```text
-[https://your-backend.onrender.com/](https://inventory-backend-uotd.onrender.com/docs
+https://tokyo-boy-inventory-backend.hf.space/docs
 ```
 
-### Docker Hub Image
 
-```text
-docker.io/gopal0921/backend:latest
-```
 
 ---
 
@@ -174,7 +174,7 @@ This structure improves maintainability, scalability, and testability.
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 The dashboard provides inventory metrics, business statistics, low-stock alerts, and recent order activity.
 
@@ -182,7 +182,7 @@ The dashboard provides inventory metrics, business statistics, low-stock alerts,
 
 ## Products Management
 
-![Products](screenshots/products.png)
+![Products](screenshots/product.png)
 
 Manage products, pricing, stock levels, and SKU information through a searchable product catalog.
 
@@ -190,7 +190,7 @@ Manage products, pricing, stock levels, and SKU information through a searchable
 
 ## Customers Management
 
-![Customers](screenshots/customers.png)
+![Customers](screenshots/customer.png)
 
 Manage customer information including names, email addresses, and contact details.
 
@@ -198,7 +198,7 @@ Manage customer information including names, email addresses, and contact detail
 
 ## Orders Management
 
-![Orders](screenshots/orders.png)
+![Orders](screenshots/order.png)
 
 Create and manage customer orders with automatic inventory updates and order tracking.
 
@@ -217,9 +217,9 @@ Fully responsive user interface optimized for mobile and tablet devices.
 ## Clone Repository
 
 ```bash
-git clone https://github.com/gopal092003/inventory-order-management.git
+git clone https://github.com/akshat-hello-world/Inventory-Management-Dashboard-.git
 
-cd inventory-order-management
+cd inventory-management-dashboard
 ```
 
 ---
@@ -386,16 +386,6 @@ docs/fly-deployment-guide.md
 Deployment stack:
 
 ```text
-Frontend → Vercel
-
-Backend → Render
-
-Database → Render PostgreSQL
-```
-
-Free stack:
-
-```text
 Frontend -> Vercel
 Backend -> Hugging Face Spaces Docker
 Database -> Supabase Postgres
@@ -420,27 +410,7 @@ Workflow:
 
 ---
 
-# Database Migrations
 
-Create migration:
-
-```bash
-alembic revision --autogenerate -m "migration_name"
-```
-
-Apply migrations:
-
-```bash
-alembic upgrade head
-```
-
-Rollback migration:
-
-```bash
-alembic downgrade -1
-```
-
----
 
 # Future Enhancements
 
