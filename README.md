@@ -1,10 +1,3 @@
----
-title: Inventory Management API
-colorFrom: green
-colorTo: gray
-sdk: docker
-app_port: 7860
----
 
 # Inventory Order Management System
 
@@ -461,26 +454,5 @@ alembic downgrade -1
 * Unit Tests
 * Integration Tests
 
----
 
-# Author
 
-Your Name
-
-GitHub:
-
-```text
-https://github.com/gopal092003
-```
-
-LinkedIn:
-
-```text
-https://www.linkedin.com/in/gopal-gupta-0ab404281/
-```
-
----
-
-# License
-
-This project was developed as part of a technical assessment and is intended for educational and evaluation purposes.
